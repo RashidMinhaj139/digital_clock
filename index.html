@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      .container {
+        box-shadow: 2px 2px 14px black;
+        display: flex;
+        font-size: 100px;
+        justify-content: center;
+        border: 2px solid black;
+        height: 180px;
+        width: 60%;
+        margin: 160px 240px;
+        background-color: pink;
+      }
+      .container div {
+        padding-top: 20px;
+      }
+      h1{
+        position: relative;
+        /* border: 2px solid red; */
+        left: 500px;
+       top: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      function clock() {
+        var hrs = document.getElementById("h");
+        var mnt = document.getElementById("m");
+        var sec = document.getElementById("s");
+        var ampm = document.getElementById("am_pm");
+
+        var date = new Date();
+
+        hrs.innerHTML = date.getHours();
+        mnt.innerHTML = date.getMinutes();
+        sec.innerHTML = date.getSeconds();
+        if (hrs >= 12) {
+          ampm.innerHTML = "PM";
+        } else {
+          ampm.innerHTML = "AM";
+        }
+        if (hrs > 12) {
+          hrs = hrs - 12;
+        }
+      }
+      setInterval(clock, 1000);
+    </script>
+    <h1>Digital clock</h1>
+    <div class="container">
+      <div id="h">00</div>
+      <div>:</div>
+      <div id="m">00</div>
+      <div>:</div>
+      <div id="s">00</div>
+      <div id="am_pm">AM</div>
+    </div>
+  </body>
+</html>
